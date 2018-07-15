@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  app:startDestination="@id/mainFragment">
+
+  <fragment
+    android:id="@+id/mainFragment"
+    android:name="com.raywenderlich.android.navofthrones.MainFragment"
+    android:label="MainFragment" >
+    <action
+      android:id="@+id/action_mainFragment_to_lyannaFragment"
+      app:destination="@id/lyannaFragment" />
+    <action
+      android:id="@+id/action_mainFragment_to_rhaegarFragment"
+      app:destination="@id/rhaegarFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/lyannaFragment"
+    android:name="com.raywenderlich.android.navofthrones.LyannaFragment"
+    android:label="LyannaFragment" >
+    <action
+      android:id="@+id/action_lyannaFragment_to_jonSnowFragment"
+      app:destination="@id/jonSnowFragment"
+      app:enterAnim="@anim/translate_in_up"
+      app:exitAnim="@anim/translate_out_up"
+      app:popEnterAnim="@anim/translate_in_down"
+      app:popExitAnim="@anim/translate_out_down" />
+  </fragment>
+  <fragment
+    android:id="@+id/rhaegarFragment"
+    android:name="com.raywenderlich.android.navofthrones.RhaegarFragment"
+    android:label="RhaegarFragment" >
+    <action
+      android:id="@+id/action_rhaegarFragment_to_jonSnowFragment"
+      app:destination="@id/jonSnowFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/jonSnowFragment"
+    android:name="com.raywenderlich.android.navofthrones.JonSnowFragment"
+    android:label="JonSnowFragment" >
+    <argument
+      android:name="whoami"
+      android:defaultValue="No one"
+      app:type="string" />
+  </fragment>
+</navigation>
